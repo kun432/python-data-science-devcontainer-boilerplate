@@ -1,5 +1,5 @@
 {
-	"dockerFile": "Dockerfile",
+	"dockerFile": "../Dockerfile",
 	"forwardPorts": [
 		8501
 	]
