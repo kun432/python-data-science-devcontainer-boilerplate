@@ -1,12 +1,12 @@
 FROM mcr.microsoft.com/devcontainers/python:0-3.10
 
 RUN apt update -y \
-    && apt-get install -y ruby locales \
+    && apt install -y ruby locales \
     && sed -i '/^#.* ja_JP.UTF-8 /s/^#//' /etc/locale.gen \
     && locale-gen \
     && ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime\
     && dpkg-reconfigure -f noninteractive tzdata
-RUN apt-get install chromium chromium-driver
+RUN apt install -y chromium chromium-driver
 ENV LANG="ja_JP.UTF-8"
 ENV LANGUAGE="ja_JP:ja"
 ENV LC_ALL="ja_JP.UTF-8"
